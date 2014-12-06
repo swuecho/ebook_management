@@ -11,7 +11,9 @@ my $schema = Me::Schema->connect('dbi:SQLite:Me.db');
 # Add the file to the database and file system
 my $upload = $schema->resultset('Upload')->create(
     {
+        name  => $ARGV[0],
         file => $file,
-        mime => ( MIME::Types->new->mimeTypeOf( $ARGV[0] ) )
+        mime => ( MIME::Types->new->mimeTypeOf( $ARGV[0] ) ),
+        caption => $ARGV[0]
     }
 );

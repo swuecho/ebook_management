@@ -22,7 +22,7 @@ say $upload->file->basename;
 p $upload->mime;
 
 # get the file extension
-$upload->extension;
+p $upload->extension;
 
 __END__
 # get a read filehandle

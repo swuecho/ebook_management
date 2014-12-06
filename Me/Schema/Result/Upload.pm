@@ -47,7 +47,8 @@ __PACKAGE__->table("upload");
 =head2 ts
 
   data_type: 'datetime'
-  is_nullable: 0
+  default_value: CURRENT_TIMESTAMPA
+  is_nullable: 1
 
 =head2 caption
 
@@ -66,7 +67,11 @@ __PACKAGE__->add_columns(
   "mime",
   { data_type => "text", is_nullable => 0 },
   "ts",
-  { data_type => "datetime", is_nullable => 0 },
+  {
+    data_type     => "datetime",
+    default_value => \"CURRENT_TIMESTAMPA",
+    is_nullable   => 1,
+  },
   "caption",
   { data_type => "text", is_nullable => 0 },
 );
@@ -84,8 +89,8 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("id");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2014-12-06 13:17:32
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:lY+GFHe49Bt2I6u5Lj28wg
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2014-12-06 13:46:40
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:SsNXlus00aUa+32iGoV0rg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
