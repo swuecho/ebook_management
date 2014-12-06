@@ -1,0 +1,14 @@
+#!/usr/bin/env perl
+use v5.20;
+use lib '.';
+use Me::Schema;
+use MIME::Types;
+
+open(my $file, '<', $ARGV[0]) or die $!;
+
+my $schema = Me::Schema->connect('dbi:SQLite:MyApp.db');
+
+# Add the file to the database and file system
+my $upload = $schema->resultset('Upload')->
+  create({ file => $file,
+	                  mime => (MIME::Types->new->mimeTypeOf($ARGV[0])) });
