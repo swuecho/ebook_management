@@ -1,32 +1,21 @@
 #!/usr/bin/env perl
 use v5.20;
-use DDP;
-use Me::Schema;
 use lib '.';
+use Me::Schema;
+use Dancer2;
 
 my $schema = Me::Schema->connect('dbi:SQLite:Me.db');
 
+
+get '/*' => sub {
 # retrieve the upload
 my $upload = $schema->resultset('Upload')->find(1);
 
-
 # get the absolute path
 say $upload->file->absolute;
-
-p $upload->ts;
+say $upload->ts;
 say $upload->name;
-# get the mime type (image/png)
-p $upload->mime;
+return $upload->name;
+};
 
-# get the file extension
-p $upload->extension;
-
-__END__
-# get a read filehandle
-$upload->file->openr;
-
-# get a write filehandle
-$upload->file->openw;
-
-# get an append filehandle
-$upload->file->opena;)))
+dance;
