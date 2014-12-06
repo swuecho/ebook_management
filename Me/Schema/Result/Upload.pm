@@ -47,7 +47,7 @@ __PACKAGE__->table("upload");
 =head2 ts
 
   data_type: 'datetime'
-  default_value: CURRENT_TIMESTAMPA
+  default_value: current_timestamp
   is_nullable: 1
 
 =head2 caption
@@ -69,7 +69,7 @@ __PACKAGE__->add_columns(
   "ts",
   {
     data_type     => "datetime",
-    default_value => \"CURRENT_TIMESTAMPA",
+    default_value => \"current_timestamp",
     is_nullable   => 1,
   },
   "caption",
@@ -89,8 +89,8 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("id");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2014-12-06 13:46:40
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:SsNXlus00aUa+32iGoV0rg
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2014-12-06 13:53:01
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:XGjqqOVQhzaIUVq5Fk3TLw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

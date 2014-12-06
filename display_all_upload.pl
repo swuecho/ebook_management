@@ -9,15 +9,12 @@ my $schema = Me::Schema->connect('dbi:SQLite:Me.db');
 # retrieve the upload
 my $upload = $schema->resultset('Upload')->find(1);
 
-# get the relative path
-say $upload->file->relative;
 
 # get the absolute path
 say $upload->file->absolute;
 
-# get the base filename
-say $upload->file->basename;
-
+p $upload->ts;
+say $upload->name;
 # get the mime type (image/png)
 p $upload->mime;
 

@@ -4,6 +4,6 @@ create table upload (
         name        text        not null,
         file        text        not null,
         mime        text        not null,
-        ts         datetime     DEFAULT CURRENT_TIMESTAMPA,
+        ts         datetime     DEFAULT CURRENT_TIMESTAMP,
         caption     text        not null
 );
