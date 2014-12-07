@@ -1,0 +1,20 @@
+<h2>Puppy Photos</h2>
+ 
+<div id="puppy-list">
+<table>
+[% FOREACH photo IN all_uploads %]
+<tr>
+<td>
+  [% IF photo %]
+  <a href="[% photo.view_url %]">
+     <img src="[% photo.thumbnail_url %]" />
+  </a>
+  [% ELSE %]
+  <img src="[%  uri_for("/static/photos/blank.gif") %]" width="150" height="100"/>
+  [% END %]
+</td>
+[% END %]
+</tr>
+<table>
+</div>
+
